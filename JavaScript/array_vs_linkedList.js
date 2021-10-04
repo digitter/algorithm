@@ -16,13 +16,13 @@ class LinkedList {
   // 末尾に要素を追加する
   push(value) {
     const node = new LinkedListNode(value);
-    if(!this.head) { // 先頭が無い場合
+    if (!this.head) { // 先頭が無い場合
       this.head = node; // 新しいnodeを先頭に設定
       return;
     }
     let current = this.head;
     // nodeにnextがある場合、currentが最後の要素になるまでループ
-    while(current.next) { current = current.next }
+    while (current.next) { current = current.next }
     // 一番最後のnodeのnextに現在のnodeを設定
     current.next = node;
   }
@@ -36,7 +36,7 @@ class LinkedList {
   toString() {
     const array = [];
     let current = this.head;
-    while(current) {
+    while (current) {
       array.push(current.value);
       current = current.next;
     }
@@ -47,7 +47,7 @@ class LinkedList {
 // callback関数を100回実行した時にかかる時間を計測する関数
 function measureTime(func) {
   const startTime = performance.now(); // 開始時間
-  for(let i = 0; i < 100; i++) { func(); }
+  for (let i = 0; i < 100; i++) { func(); }
 
   const endTime = performance.now(); // 終了時間
   const elapsedTime = endTime - startTime; // 経過時間
@@ -57,28 +57,28 @@ function measureTime(func) {
 // 配列の末尾に値を追加する
 function arrayPush() {
   const array = [];
-  for(let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     array.push(i);
   }
 }
 // 配列の先頭に値を追加する
 function arrayUnshift() {
   const array = [];
-  for(let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     array.unshift(i);
   }
 }
 // 連結リストの末尾に値を追加する
 function linkedListPush() {
   const list = new LinkedList();
-  for(let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     list.push(i);
   }
 }
 // 連結リストの先頭に値を追加する
 function linkedListUnshift() {
   const list = new LinkedList();
-  for(let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 1000; i++) {
     list.unshift(i);
   }
 }
