@@ -55,8 +55,8 @@ arr.each {|e| tree.add_node(BinaryTreeNode.new(e))}
 p tree.root.right.value
 p tree.root.left.value
 
-p tree.exists?(50)
-p tree.exists?(10)
-p tree.exists?(2)
-p tree.exists?(0)
+p tree.exists?(50) # true
+p tree.exists?(10) # true
+p tree.exists?(2) # false
+p tree.exists?(0) # false
 
