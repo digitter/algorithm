@@ -15,8 +15,16 @@
 
 // console.log(maxValue([1, 2, 3]));
 
-const maxValue = ([x, ...rest]: number[]): number => rest.length === 0
-  ? x
-  : (x > maxValue(rest) ? x : maxValue(rest));
+// const maxValue = ([x, ...rest]: number[]): number => rest.length === 0
+//   ? x
+//   : (x > maxValue(rest) ? x : maxValue(rest));
 
-console.log(maxValue([1, 2, 3]));
+// console.log(maxValue([1, 2, 3]));
+
+/* Reduce */
+const sumWithInitial = (arr: number[]) => arr.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  0
+);
+
+console.log(sumWithInitial([1, 2, 3]));
